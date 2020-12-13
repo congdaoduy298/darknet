@@ -1,0 +1,11 @@
+2020-11-16 17:15:06,656 INFO    MainThread:756 [internal.py:wandb_internal():63] W&B internal server running at pid: 756
+2020-11-16 17:15:06,659 INFO    WriterThread:756 [datastore.py:open_for_write():76] open: /content/gdrive/My Drive/DeepLearning/ZaloChallenge/za_traffic_2020/darknet/wandb/run-20201116_171505-3rfmj6yr/run-3rfmj6yr.wandb
+2020-11-16 17:15:06,659 DEBUG   HandlerThread:756 [handler.py:handle_request():55] handle_request: check_version
+2020-11-16 17:15:06,662 DEBUG   SenderThread:756 [sender.py:send():90] send: header
+2020-11-16 17:15:06,663 DEBUG   SenderThread:756 [sender.py:send():90] send: request
+2020-11-16 17:15:06,663 DEBUG   SenderThread:756 [sender.py:send_request():99] send_request: check_version
+2020-11-16 17:15:06,665 DEBUG   Thread-4  :756 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): pypi.org:443
+2020-11-16 17:15:06,684 DEBUG   Thread-4  :756 [connectionpool.py:_make_request():393] https://pypi.org:443 "GET /pypi/wandb/json HTTP/1.1" 200 51661
+2020-11-16 17:15:06,694 DEBUG   SenderThread:756 [sender.py:send():90] send: run
+2020-11-16 17:15:07,230 DEBUG   SenderThread:756 [cmd.py:execute():719] Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/content/gdrive/My Drive/DeepLearning/ZaloChallenge/za_traffic_2020/darknet, universal_newlines=False, shell=None, istream=None)
+2020-11-16 17:15:10,651 DEBUG   SenderThread:756 [cmd.py:execute():719] Popen(['git', 'cat-file', '--batch-check'], cwd=/content/gdrive/My Drive/DeepLearning/ZaloChallenge/za_traffic_2020/darknet, universal_newlines=False, shell=None, istream=<valid stream>)

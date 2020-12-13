@@ -1,0 +1,14 @@
+2020-11-17 17:24:16,521 INFO    MainThread:55 [wandb_setup.py:_flush():68] setting env: {}
+2020-11-17 17:24:16,522 INFO    MainThread:55 [wandb_setup.py:_flush():68] multiprocessing start_methods=fork,spawn,forkserver
+2020-11-17 17:24:16,522 INFO    MainThread:55 [wandb_setup.py:_flush():68] setting login settings: {}
+2020-11-17 17:24:16,522 INFO    MainThread:55 [wandb_setup.py:_flush():68] setting login settings: {'api_key': '3bb65ddaafdfd54f7256e1959d0c2ee35590557a'}
+2020-11-17 17:24:16,522 INFO    MainThread:55 [wandb_setup.py:_flush():68] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7fdc19d88208>
+2020-11-17 17:24:16,523 INFO    MainThread:55 [wandb_init.py:_log_setup():302] Logging user logs to /content/gdrive/My Drive/DeepLearning/ZaloChallenge/za_traffic_2020/darknet/wandb/run-20201117_172416-22r4rmkc/logs/debug.log
+2020-11-17 17:24:16,524 INFO    MainThread:55 [wandb_init.py:_log_setup():303] Logging internal logs to /content/gdrive/My Drive/DeepLearning/ZaloChallenge/za_traffic_2020/darknet/wandb/run-20201117_172416-22r4rmkc/logs/debug-internal.log
+2020-11-17 17:24:19,959 INFO    MainThread:55 [wandb_run.py:_console_start():1213] atexit reg
+2020-11-17 17:24:19,962 INFO    MainThread:55 [wandb_run.py:_redirect():1083] redirect: SettingsConsole.WRAP
+2020-11-17 17:24:19,964 INFO    MainThread:55 [wandb_run.py:_redirect():1114] Wrapping output streams.
+2020-11-17 17:24:19,964 INFO    MainThread:55 [wandb_run.py:_redirect():1130] Redirects installed.
+2020-11-17 17:24:19,969 INFO    MainThread:55 [wandb_init.py:_pause_backend():223] pausing backend
+2020-11-17 17:24:45,189 INFO    MainThread:55 [wandb_init.py:_resume_backend():228] resuming backend
+2020-11-17 17:26:59,339 INFO    MainThread:55 [wandb_init.py:_pause_backend():223] pausing backend

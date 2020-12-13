@@ -220,7 +220,7 @@ void draw_box(image a, int x1, int y1, int x2, int y2, float r, float g, float b
     if(y1 >= a.h) y1 = a.h-1;
     if(y2 < 0) y2 = 0;
     if(y2 >= a.h) y2 = a.h-1;
-
+    
     for(i = x1; i <= x2; ++i){
         a.data[i + y1*a.w + 0*a.w*a.h] = r;
         a.data[i + y2*a.w + 0*a.w*a.h] = r;
@@ -257,7 +257,7 @@ void draw_bbox(image a, box bbox, int w, float r, float g, float b)
     int right = (bbox.x+bbox.w/2)*a.w;
     int top   = (bbox.y-bbox.h/2)*a.h;
     int bot   = (bbox.y+bbox.h/2)*a.h;
-
+    
     int i;
     for(i = 0; i < w; ++i){
         draw_box(a, left+i, top+i, right-i, bot-i, r, g, b);
@@ -401,7 +401,7 @@ void draw_detections_v3(image im, detection *dets, int num, float thresh, char *
             if (right > im.w - 1) right = im.w - 1;
             if (top < 0) top = 0;
             if (bot > im.h - 1) bot = im.h - 1;
-
+            
             //int b_x_center = (left + right) / 2;
             //int b_y_center = (top + bot) / 2;
             //int b_width = right - left;
@@ -509,9 +509,9 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
             if(top < 0) top = 0;
             if(bot > im.h-1) bot = im.h-1;
             printf("%s: %.0f%%", names[class_id], prob * 100);
-
-            //printf(" - id: %d, x_center: %d, y_center: %d, width: %d, height: %d",
-            //    class_id, (right + left) / 2, (bot - top) / 2, right - left, bot - top);
+            
+            // printf(" - id: %d, x_center: %d, y_center: %d, width: %d, height: %d",
+            //     class_id, (right + left) / 2, (bot - top) / 2, right - left, bot - top);
 
             printf("\n");
             draw_box_width(im, left, top, right, bot, width, red, green, blue);

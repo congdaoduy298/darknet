@@ -1,0 +1,263 @@
+ CUDA-version: 10010 (10010), cuDNN: 7.6.5, GPU count: 1  
+ OpenCV version: 3.2.0
+ 0 : compute_capability = 750, cudnn_half = 0, GPU: Tesla T4 
+   layer   filters  size/strd(dil)      input                output
+   0 conv     32       3 x 3/ 1    608 x 608 x   3 ->  608 x 608 x  32 0.639 BF
+   1 conv     64       3 x 3/ 2    608 x 608 x  32 ->  304 x 304 x  64 3.407 BF
+   2 conv     64       1 x 1/ 1    304 x 304 x  64 ->  304 x 304 x  64 0.757 BF
+   3 route  1 		                           ->  304 x 304 x  64 
+   4 conv     64       1 x 1/ 1    304 x 304 x  64 ->  304 x 304 x  64 0.757 BF
+   5 conv     32       1 x 1/ 1    304 x 304 x  64 ->  304 x 304 x  32 0.379 BF
+   6 conv     64       3 x 3/ 1    304 x 304 x  32 ->  304 x 304 x  64 3.407 BF
+   7 Shortcut Layer: 4,  wt = 0, wn = 0, outputs: 304 x 304 x  64 0.006 BF
+   8 conv     64       1 x 1/ 1    304 x 304 x  64 ->  304 x 304 x  64 0.757 BF
+   9 route  8 2 	                           ->  304 x 304 x 128 
+  10 conv     64       1 x 1/ 1    304 x 304 x 128 ->  304 x 304 x  64 1.514 BF
+  11 conv    128       3 x 3/ 2    304 x 304 x  64 ->  152 x 152 x 128 3.407 BF
+  12 conv     64       1 x 1/ 1    152 x 152 x 128 ->  152 x 152 x  64 0.379 BF
+  13 route  11 		                           ->  152 x 152 x 128 
+  14 conv     64       1 x 1/ 1    152 x 152 x 128 ->  152 x 152 x  64 0.379 BF
+  15 conv     64       1 x 1/ 1    152 x 152 x  64 ->  152 x 152 x  64 0.189 BF
+  16 conv     64       3 x 3/ 1    152 x 152 x  64 ->  152 x 152 x  64 1.703 BF
+  17 Shortcut Layer: 14,  wt = 0, wn = 0, outputs: 152 x 152 x  64 0.001 BF
+  18 conv     64       1 x 1/ 1    152 x 152 x  64 ->  152 x 152 x  64 0.189 BF
+  19 conv     64       3 x 3/ 1    152 x 152 x  64 ->  152 x 152 x  64 1.703 BF
+  20 Shortcut Layer: 17,  wt = 0, wn = 0, outputs: 152 x 152 x  64 0.001 BF
+  21 conv     64       1 x 1/ 1    152 x 152 x  64 ->  152 x 152 x  64 0.189 BF
+  22 route  21 12 	                           ->  152 x 152 x 128 
+  23 conv    128       1 x 1/ 1    152 x 152 x 128 ->  152 x 152 x 128 0.757 BF
+  24 conv    256       3 x 3/ 2    152 x 152 x 128 ->   76 x  76 x 256 3.407 BF
+  25 conv    128       1 x 1/ 1     76 x  76 x 256 ->   76 x  76 x 128 0.379 BF
+  26 route  24 		                           ->   76 x  76 x 256 
+  27 conv    128       1 x 1/ 1     76 x  76 x 256 ->   76 x  76 x 128 0.379 BF
+  28 conv    128       1 x 1/ 1     76 x  76 x 128 ->   76 x  76 x 128 0.189 BF
+  29 conv    128       3 x 3/ 1     76 x  76 x 128 ->   76 x  76 x 128 1.703 BF
+  30 Shortcut Layer: 27,  wt = 0, wn = 0, outputs:  76 x  76 x 128 0.001 BF
+  31 conv    128       1 x 1/ 1     76 x  76 x 128 ->   76 x  76 x 128 0.189 BF
+  32 conv    128       3 x 3/ 1     76 x  76 x 128 ->   76 x  76 x 128 1.703 BF
+  33 Shortcut Layer: 30,  wt = 0, wn = 0, outputs:  76 x  76 x 128 0.001 BF
+  34 conv    128       1 x 1/ 1     76 x  76 x 128 ->   76 x  76 x 128 0.189 BF
+  35 conv    128       3 x 3/ 1     76 x  76 x 128 ->   76 x  76 x 128 1.703 BF
+  36 Shortcut Layer: 33,  wt = 0, wn = 0, outputs:  76 x  76 x 128 0.001 BF
+  37 conv    128       1 x 1/ 1     76 x  76 x 128 ->   76 x  76 x 128 0.189 BF
+  38 conv    128       3 x 3/ 1     76 x  76 x 128 ->   76 x  76 x 128 1.703 BF
+  39 Shortcut Layer: 36,  wt = 0, wn = 0, outputs:  76 x  76 x 128 0.001 BF
+  40 conv    128       1 x 1/ 1     76 x  76 x 128 ->   76 x  76 x 128 0.189 BF
+  41 conv    128       3 x 3/ 1     76 x  76 x 128 ->   76 x  76 x 128 1.703 BF
+  42 Shortcut Layer: 39,  wt = 0, wn = 0, outputs:  76 x  76 x 128 0.001 BF
+  43 conv    128       1 x 1/ 1     76 x  76 x 128 ->   76 x  76 x 128 0.189 BF
+  44 conv    128       3 x 3/ 1     76 x  76 x 128 ->   76 x  76 x 128 1.703 BF
+  45 Shortcut Layer: 42,  wt = 0, wn = 0, outputs:  76 x  76 x 128 0.001 BF
+  46 conv    128       1 x 1/ 1     76 x  76 x 128 ->   76 x  76 x 128 0.189 BF
+  47 conv    128       3 x 3/ 1     76 x  76 x 128 ->   76 x  76 x 128 1.703 BF
+  48 Shortcut Layer: 45,  wt = 0, wn = 0, outputs:  76 x  76 x 128 0.001 BF
+  49 conv    128       1 x 1/ 1     76 x  76 x 128 ->   76 x  76 x 128 0.189 BF
+  50 conv    128       3 x 3/ 1     76 x  76 x 128 ->   76 x  76 x 128 1.703 BF
+  51 Shortcut Layer: 48,  wt = 0, wn = 0, outputs:  76 x  76 x 128 0.001 BF
+  52 conv    128       1 x 1/ 1     76 x  76 x 128 ->   76 x  76 x 128 0.189 BF
+  53 route  52 25 	                           ->   76 x  76 x 256 
+  54 conv    256       1 x 1/ 1     76 x  76 x 256 ->   76 x  76 x 256 0.757 BF
+  55 conv    512       3 x 3/ 2     76 x  76 x 256 ->   38 x  38 x 512 3.407 BF
+  56 conv    256       1 x 1/ 1     38 x  38 x 512 ->   38 x  38 x 256 0.379 BF
+  57 route  55 		                           ->   38 x  38 x 512 
+  58 conv    256       1 x 1/ 1     38 x  38 x 512 ->   38 x  38 x 256 0.379 BF
+  59 conv    256       1 x 1/ 1     38 x  38 x 256 ->   38 x  38 x 256 0.189 BF
+  60 conv    256       3 x 3/ 1     38 x  38 x 256 ->   38 x  38 x 256 1.703 BF
+  61 Shortcut Layer: 58,  wt = 0, wn = 0, outputs:  38 x  38 x 256 0.000 BF
+  62 conv    256       1 x 1/ 1     38 x  38 x 256 ->   38 x  38 x 256 0.189 BF
+  63 conv    256       3 x 3/ 1     38 x  38 x 256 ->   38 x  38 x 256 1.703 BF
+  64 Shortcut Layer: 61,  wt = 0, wn = 0, outputs:  38 x  38 x 256 0.000 BF
+  65 conv    256       1 x 1/ 1     38 x  38 x 256 ->   38 x  38 x 256 0.189 BF
+  66 conv    256       3 x 3/ 1     38 x  38 x 256 ->   38 x  38 x 256 1.703 BF
+  67 Shortcut Layer: 64,  wt = 0, wn = 0, outputs:  38 x  38 x 256 0.000 BF
+  68 conv    256       1 x 1/ 1     38 x  38 x 256 ->   38 x  38 x 256 0.189 BF
+  69 conv    256       3 x 3/ 1     38 x  38 x 256 ->   38 x  38 x 256 1.703 BF
+  70 Shortcut Layer: 67,  wt = 0, wn = 0, outputs:  38 x  38 x 256 0.000 BF
+  71 conv    256       1 x 1/ 1     38 x  38 x 256 ->   38 x  38 x 256 0.189 BF
+  72 conv    256       3 x 3/ 1     38 x  38 x 256 ->   38 x  38 x 256 1.703 BF
+  73 Shortcut Layer: 70,  wt = 0, wn = 0, outputs:  38 x  38 x 256 0.000 BF
+  74 conv    256       1 x 1/ 1     38 x  38 x 256 ->   38 x  38 x 256 0.189 BF
+  75 conv    256       3 x 3/ 1     38 x  38 x 256 ->   38 x  38 x 256 1.703 BF
+  76 Shortcut Layer: 73,  wt = 0, wn = 0, outputs:  38 x  38 x 256 0.000 BF
+  77 conv    256       1 x 1/ 1     38 x  38 x 256 ->   38 x  38 x 256 0.189 BF
+  78 conv    256       3 x 3/ 1     38 x  38 x 256 ->   38 x  38 x 256 1.703 BF
+  79 Shortcut Layer: 76,  wt = 0, wn = 0, outputs:  38 x  38 x 256 0.000 BF
+  80 conv    256       1 x 1/ 1     38 x  38 x 256 ->   38 x  38 x 256 0.189 BF
+  81 conv    256       3 x 3/ 1     38 x  38 x 256 ->   38 x  38 x 256 1.703 BF
+  82 Shortcut Layer: 79,  wt = 0, wn = 0, outputs:  38 x  38 x 256 0.000 BF
+  83 conv    256       1 x 1/ 1     38 x  38 x 256 ->   38 x  38 x 256 0.189 BF
+  84 route  83 56 	                           ->   38 x  38 x 512 
+  85 conv    512       1 x 1/ 1     38 x  38 x 512 ->   38 x  38 x 512 0.757 BF
+  86 conv   1024       3 x 3/ 2     38 x  38 x 512 ->   19 x  19 x1024 3.407 BF
+  87 conv    512       1 x 1/ 1     19 x  19 x1024 ->   19 x  19 x 512 0.379 BF
+  88 route  86 		                           ->   19 x  19 x1024 
+  89 conv    512       1 x 1/ 1     19 x  19 x1024 ->   19 x  19 x 512 0.379 BF
+  90 conv    512       1 x 1/ 1     19 x  19 x 512 ->   19 x  19 x 512 0.189 BF
+  91 conv    512       3 x 3/ 1     19 x  19 x 512 ->   19 x  19 x 512 1.703 BF
+  92 Shortcut Layer: 89,  wt = 0, wn = 0, outputs:  19 x  19 x 512 0.000 BF
+  93 conv    512       1 x 1/ 1     19 x  19 x 512 ->   19 x  19 x 512 0.189 BF
+  94 conv    512       3 x 3/ 1     19 x  19 x 512 ->   19 x  19 x 512 1.703 BF
+  95 Shortcut Layer: 92,  wt = 0, wn = 0, outputs:  19 x  19 x 512 0.000 BF
+  96 conv    512       1 x 1/ 1     19 x  19 x 512 ->   19 x  19 x 512 0.189 BF
+  97 conv    512       3 x 3/ 1     19 x  19 x 512 ->   19 x  19 x 512 1.703 BF
+  98 Shortcut Layer: 95,  wt = 0, wn = 0, outputs:  19 x  19 x 512 0.000 BF
+  99 conv    512       1 x 1/ 1     19 x  19 x 512 ->   19 x  19 x 512 0.189 BF
+ 100 conv    512       3 x 3/ 1     19 x  19 x 512 ->   19 x  19 x 512 1.703 BF
+ 101 Shortcut Layer: 98,  wt = 0, wn = 0, outputs:  19 x  19 x 512 0.000 BF
+ 102 conv    512       1 x 1/ 1     19 x  19 x 512 ->   19 x  19 x 512 0.189 BF
+ 103 route  102 87 	                           ->   19 x  19 x1024 
+ 104 conv   1024       1 x 1/ 1     19 x  19 x1024 ->   19 x  19 x1024 0.757 BF
+ 105 conv    512       1 x 1/ 1     19 x  19 x1024 ->   19 x  19 x 512 0.379 BF
+ 106 conv   1024       3 x 3/ 1     19 x  19 x 512 ->   19 x  19 x1024 3.407 BF
+ 107 conv    512       1 x 1/ 1     19 x  19 x1024 ->   19 x  19 x 512 0.379 BF
+ 108 max                5x 5/ 1     19 x  19 x 512 ->   19 x  19 x 512 0.005 BF
+ 109 route  107 		                           ->   19 x  19 x 512 
+ 110 max                9x 9/ 1     19 x  19 x 512 ->   19 x  19 x 512 0.015 BF
+ 111 route  107 		                           ->   19 x  19 x 512 
+ 112 max               13x13/ 1     19 x  19 x 512 ->   19 x  19 x 512 0.031 BF
+ 113 route  112 110 108 107 	                   ->   19 x  19 x2048 
+ 114 conv    512       1 x 1/ 1     19 x  19 x2048 ->   19 x  19 x 512 0.757 BF
+ 115 conv   1024       3 x 3/ 1     19 x  19 x 512 ->   19 x  19 x1024 3.407 BF
+ 116 conv    512       1 x 1/ 1     19 x  19 x1024 ->   19 x  19 x 512 0.379 BF
+ 117 conv    256       1 x 1/ 1     19 x  19 x 512 ->   19 x  19 x 256 0.095 BF
+ 118 upsample                 2x    19 x  19 x 256 ->   38 x  38 x 256
+ 119 route  85 		                           ->   38 x  38 x 512 
+ 120 conv    256       1 x 1/ 1     38 x  38 x 512 ->   38 x  38 x 256 0.379 BF
+ 121 route  120 118 	                           ->   38 x  38 x 512 
+ 122 conv    256       1 x 1/ 1     38 x  38 x 512 ->   38 x  38 x 256 0.379 BF
+ 123 conv    512       3 x 3/ 1     38 x  38 x 256 ->   38 x  38 x 512 3.407 BF
+ 124 conv    256       1 x 1/ 1     38 x  38 x 512 ->   38 x  38 x 256 0.379 BF
+ 125 conv    512       3 x 3/ 1     38 x  38 x 256 ->   38 x  38 x 512 3.407 BF
+ 126 conv    256       1 x 1/ 1     38 x  38 x 512 ->   38 x  38 x 256 0.379 BF
+ 127 conv    128       1 x 1/ 1     38 x  38 x 256 ->   38 x  38 x 128 0.095 BF
+ 128 upsample                 2x    38 x  38 x 128 ->   76 x  76 x 128
+ 129 route  54 		                           ->   76 x  76 x 256 
+ 130 conv    128       1 x 1/ 1     76 x  76 x 256 ->   76 x  76 x 128 0.379 BF
+ 131 route  130 128 	                           ->   76 x  76 x 256 
+ 132 conv    128       1 x 1/ 1     76 x  76 x 256 ->   76 x  76 x 128 0.379 BF
+ 133 conv    256       3 x 3/ 1     76 x  76 x 128 ->   76 x  76 x 256 3.407 BF
+ 134 conv    128       1 x 1/ 1     76 x  76 x 256 ->   76 x  76 x 128 0.379 BF
+ 135 conv    256       3 x 3/ 1     76 x  76 x 128 ->   76 x  76 x 256 3.407 BF
+ 136 conv    128       1 x 1/ 1     76 x  76 x 256 ->   76 x  76 x 128 0.379 BF
+ 137 conv    256       3 x 3/ 1     76 x  76 x 128 ->   76 x  76 x 256 3.407 BF
+ 138 conv     36       1 x 1/ 1     76 x  76 x 256 ->   76 x  76 x  36 0.106 BF
+ 139 yolo
+[yolo] params: iou loss: ciou (4), iou_norm: 0.07, obj_norm: 1.00, cls_norm: 1.00, delta_norm: 1.00, scale_x_y: 1.20
+ 140 route  136 		                           ->   76 x  76 x 128 
+ 141 conv    256       3 x 3/ 2     76 x  76 x 128 ->   38 x  38 x 256 0.852 BF
+ 142 route  141 126 	                           ->   38 x  38 x 512 
+ 143 conv    256       1 x 1/ 1     38 x  38 x 512 ->   38 x  38 x 256 0.379 BF
+ 144 conv    512       3 x 3/ 1     38 x  38 x 256 ->   38 x  38 x 512 3.407 BF
+ 145 conv    256       1 x 1/ 1     38 x  38 x 512 ->   38 x  38 x 256 0.379 BF
+ 146 conv    512       3 x 3/ 1     38 x  38 x 256 ->   38 x  38 x 512 3.407 BF
+ 147 conv    256       1 x 1/ 1     38 x  38 x 512 ->   38 x  38 x 256 0.379 BF
+ 148 conv    512       3 x 3/ 1     38 x  38 x 256 ->   38 x  38 x 512 3.407 BF
+ 149 conv     36       1 x 1/ 1     38 x  38 x 512 ->   38 x  38 x  36 0.053 BF
+ 150 yolo
+[yolo] params: iou loss: ciou (4), iou_norm: 0.07, obj_norm: 1.00, cls_norm: 1.00, delta_norm: 1.00, scale_x_y: 1.10
+ 151 route  147 		                           ->   38 x  38 x 256 
+ 152 conv    512       3 x 3/ 2     38 x  38 x 256 ->   19 x  19 x 512 0.852 BF
+ 153 route  152 116 	                           ->   19 x  19 x1024 
+ 154 conv    512       1 x 1/ 1     19 x  19 x1024 ->   19 x  19 x 512 0.379 BF
+ 155 conv   1024       3 x 3/ 1     19 x  19 x 512 ->   19 x  19 x1024 3.407 BF
+ 156 conv    512       1 x 1/ 1     19 x  19 x1024 ->   19 x  19 x 512 0.379 BF
+ 157 conv   1024       3 x 3/ 1     19 x  19 x 512 ->   19 x  19 x1024 3.407 BF
+ 158 conv    512       1 x 1/ 1     19 x  19 x1024 ->   19 x  19 x 512 0.379 BF
+ 159 conv   1024       3 x 3/ 1     19 x  19 x 512 ->   19 x  19 x1024 3.407 BF
+ 160 conv     36       1 x 1/ 1     19 x  19 x1024 ->   19 x  19 x  36 0.027 BF
+ 161 yolo
+[yolo] params: iou loss: ciou (4), iou_norm: 0.07, obj_norm: 1.00, cls_norm: 1.00, delta_norm: 1.00, scale_x_y: 1.05
+Total BFLOPS 127.325 
+avg_outputs = 1047898 
+ Allocate additional workspace_size = 52.43 MB 
+ Create 6 permanent cpu-threads 
+Cannot load image ./data/traffic_train/images/10341.png
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.267030, GIOU: 0.215779), Class: 0.524022, Obj: 0.641940, No Obj: 0.603371, .5R: 0.000000, .75R: 0.000000, count: 4, class_loss = 14219.883789, iou_loss = 4.264648, total_loss = 14224.148438 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.478970, GIOU: 0.393000), Class: 0.546115, Obj: 0.513100, No Obj: 0.495098, .5R: 0.500000, .75R: 0.000000, count: 6, class_loss = 2499.973145, iou_loss = 6.927246, total_loss = 2506.900391 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.498663, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 630.248108, iou_loss = 0.000000, total_loss = 630.248108 
+ total_bbox = 10, rewritten_bbox = 0.000000 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.142504, GIOU: -0.061842), Class: 0.477829, Obj: 0.666783, No Obj: 0.606011, .5R: 0.000000, .75R: 0.000000, count: 7, class_loss = 14344.780273, iou_loss = 3.333984, total_loss = 14348.114258 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.388298, GIOU: 0.268917), Class: 0.410250, Obj: 0.443094, No Obj: 0.494994, .5R: 0.142857, .75R: 0.000000, count: 7, class_loss = 2504.142822, iou_loss = 7.235840, total_loss = 2511.378662 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.121826, GIOU: -0.490911), Class: 0.454724, Obj: 0.475327, No Obj: 0.498498, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 632.472961, iou_loss = 0.005005, total_loss = 632.477966 
+ total_bbox = 25, rewritten_bbox = 0.000000 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.126935, GIOU: 0.084099), Class: 0.442896, Obj: 0.808801, No Obj: 0.597861, .5R: 0.000000, .75R: 0.000000, count: 6, class_loss = 13987.135742, iou_loss = 8.265625, total_loss = 13995.401367 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.492419, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 2463.314453, iou_loss = 0.000000, total_loss = 2463.314453 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.499303, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 631.241638, iou_loss = 0.000000, total_loss = 631.241638 
+ total_bbox = 31, rewritten_bbox = 6.451613 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.032126, GIOU: -0.111283), Class: 0.543261, Obj: 0.702673, No Obj: 0.606479, .5R: 0.000000, .75R: 0.000000, count: 3, class_loss = 14361.028320, iou_loss = 3.786133, total_loss = 14364.814453 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.494460, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 2496.062256, iou_loss = 0.000000, total_loss = 2496.062256 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.498314, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 630.630920, iou_loss = 0.000000, total_loss = 630.630920 
+ total_bbox = 34, rewritten_bbox = 5.882353 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.075227, GIOU: -0.195812), Class: 0.416865, Obj: 0.641468, No Obj: 0.597088, .5R: 0.000000, .75R: 0.000000, count: 9, class_loss = 13922.489258, iou_loss = 19.526367, total_loss = 13942.015625 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.036525, GIOU: -0.053524), Class: 0.194153, Obj: 0.091204, No Obj: 0.494924, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 2484.618896, iou_loss = 0.011230, total_loss = 2484.630127 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.498988, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 627.496521, iou_loss = 0.000000, total_loss = 627.496521 
+ total_bbox = 44, rewritten_bbox = 4.545455 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.091122, GIOU: -0.097627), Class: 0.432338, Obj: 0.622336, No Obj: 0.605005, .5R: 0.000000, .75R: 0.000000, count: 4, class_loss = 14294.629883, iou_loss = 15.834961, total_loss = 14310.464844 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.345584, GIOU: 0.205046), Class: 0.382309, Obj: 0.528053, No Obj: 0.494595, .5R: 0.000000, .75R: 0.000000, count: 3, class_loss = 2496.041260, iou_loss = 0.965088, total_loss = 2497.006348 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.243187, GIOU: -0.126836), Class: 0.577817, Obj: 0.427830, No Obj: 0.498743, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 631.132690, iou_loss = 0.025574, total_loss = 631.158264 
+ total_bbox = 52, rewritten_bbox = 3.846154 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.209327, GIOU: 0.072075), Class: 0.512167, Obj: 0.610668, No Obj: 0.606747, .5R: 0.000000, .75R: 0.000000, count: 19, class_loss = 14383.732422, iou_loss = 133.202148, total_loss = 14516.934570 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.496367, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 2508.826172, iou_loss = 0.000000, total_loss = 2508.826172 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.499018, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 630.138000, iou_loss = 0.000000, total_loss = 630.138000 
+ total_bbox = 71, rewritten_bbox = 2.816901 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.170425, GIOU: 0.073225), Class: 0.524914, Obj: 0.631794, No Obj: 0.606692, .5R: 0.000000, .75R: 0.000000, count: 18, class_loss = 14378.840820, iou_loss = 53.525391, total_loss = 14432.366211 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.307168, GIOU: 0.194768), Class: 0.428895, Obj: 0.503951, No Obj: 0.495553, .5R: 0.111111, .75R: 0.111111, count: 9, class_loss = 2510.858643, iou_loss = 4.371338, total_loss = 2515.229980 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.308863, GIOU: 0.224475), Class: 0.652295, Obj: 0.228784, No Obj: 0.498304, .5R: 0.000000, .75R: 0.000000, count: 3, class_loss = 632.247742, iou_loss = 0.570801, total_loss = 632.818542 
+ total_bbox = 101, rewritten_bbox = 4.950495 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.174321, GIOU: -0.000094), Class: 0.487548, Obj: 0.594964, No Obj: 0.605013, .5R: 0.000000, .75R: 0.000000, count: 6, class_loss = 14282.037109, iou_loss = 23.807617, total_loss = 14305.844727 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.463056, GIOU: 0.356519), Class: 0.328914, Obj: 0.611596, No Obj: 0.495773, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 2507.672852, iou_loss = 4.314697, total_loss = 2511.987549 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.498036, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 630.103455, iou_loss = 0.000000, total_loss = 630.103455 
+ total_bbox = 108, rewritten_bbox = 4.629630 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.134628, GIOU: 0.046314), Class: 0.508233, Obj: 0.687168, No Obj: 0.599909, .5R: 0.083333, .75R: 0.000000, count: 12, class_loss = 14034.806641, iou_loss = 17.039062, total_loss = 14051.845703 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.354017, GIOU: 0.290022), Class: 0.468102, Obj: 0.529692, No Obj: 0.496121, .5R: 0.200000, .75R: 0.000000, count: 5, class_loss = 2493.063965, iou_loss = 3.299072, total_loss = 2496.363037 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.310687, GIOU: 0.062952), Class: 0.487448, Obj: 0.409793, No Obj: 0.499574, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 628.282288, iou_loss = 0.042725, total_loss = 628.325012 
+ total_bbox = 126, rewritten_bbox = 3.968254 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.156744, GIOU: -0.183029), Class: 0.437860, Obj: 0.855925, No Obj: 0.606769, .5R: 0.000000, .75R: 0.000000, count: 2, class_loss = 14371.612305, iou_loss = 1.709961, total_loss = 14373.322266 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.210991, GIOU: 0.111353), Class: 0.822239, Obj: 0.196184, No Obj: 0.493970, .5R: 0.000000, .75R: 0.000000, count: 2, class_loss = 2496.354004, iou_loss = 0.944580, total_loss = 2497.298584 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.498499, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 629.898865, iou_loss = 0.000000, total_loss = 629.898865 
+ total_bbox = 130, rewritten_bbox = 3.846154 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.115855, GIOU: 0.000174), Class: 0.336585, Obj: 0.736206, No Obj: 0.600933, .5R: 0.000000, .75R: 0.000000, count: 9, class_loss = 14120.834961, iou_loss = 29.548828, total_loss = 14150.383789 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.494758, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 2488.178955, iou_loss = 0.000000, total_loss = 2488.178955 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.498625, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 629.419800, iou_loss = 0.000000, total_loss = 629.419800 
+ total_bbox = 139, rewritten_bbox = 3.597122 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.173436, GIOU: -0.072177), Class: 0.251284, Obj: 0.871327, No Obj: 0.601892, .5R: 0.000000, .75R: 0.000000, count: 3, class_loss = 14156.880859, iou_loss = 14.710938, total_loss = 14171.591797 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.493704, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 2482.139160, iou_loss = 0.000000, total_loss = 2482.139160 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.499849, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 632.267151, iou_loss = 0.000000, total_loss = 632.267151 
+ total_bbox = 142, rewritten_bbox = 3.521127 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.236231, GIOU: -0.034754), Class: 0.661263, Obj: 0.621491, No Obj: 0.608865, .5R: 0.000000, .75R: 0.000000, count: 6, class_loss = 14480.801758, iou_loss = 17.770508, total_loss = 14498.572266 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.225480, GIOU: 0.025286), Class: 0.420051, Obj: 0.236841, No Obj: 0.493955, .5R: 0.000000, .75R: 0.000000, count: 4, class_loss = 2499.498291, iou_loss = 6.947266, total_loss = 2506.445557 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.498770, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 632.035767, iou_loss = 0.000000, total_loss = 632.035767 
+ total_bbox = 152, rewritten_bbox = 3.289474 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.287351, GIOU: 0.263481), Class: 0.402817, Obj: 0.545293, No Obj: 0.597151, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 13924.977539, iou_loss = 16.039062, total_loss = 13941.016602 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.617649, GIOU: 0.617648), Class: 0.309920, Obj: 0.733149, No Obj: 0.496037, .5R: 1.000000, .75R: 0.000000, count: 1, class_loss = 2495.104492, iou_loss = 0.719971, total_loss = 2495.824463 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.311636, GIOU: 0.265880), Class: 0.595861, Obj: 0.543609, No Obj: 0.499885, .5R: 0.500000, .75R: 0.000000, count: 2, class_loss = 632.533325, iou_loss = 0.063904, total_loss = 632.597229 
+ total_bbox = 156, rewritten_bbox = 3.205128 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.158499, GIOU: -0.016510), Class: 0.460254, Obj: 0.700394, No Obj: 0.608124, .5R: 0.000000, .75R: 0.000000, count: 6, class_loss = 14452.872070, iou_loss = 18.456055, total_loss = 14471.328125 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.493982, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 2495.885010, iou_loss = 0.000000, total_loss = 2495.885010 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.498935, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 631.330688, iou_loss = 0.000000, total_loss = 631.330688 
+ total_bbox = 162, rewritten_bbox = 3.086420 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.223704, GIOU: 0.100042), Class: 0.523666, Obj: 0.655237, No Obj: 0.602699, .5R: 0.000000, .75R: 0.000000, count: 22, class_loss = 14199.436523, iou_loss = 92.308594, total_loss = 14291.745117 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.495495, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 2494.893311, iou_loss = 0.000000, total_loss = 2494.893311 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.499510, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 631.799377, iou_loss = 0.000000, total_loss = 631.799377 
+ total_bbox = 184, rewritten_bbox = 2.717391 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.256901, GIOU: 0.111803), Class: 0.483654, Obj: 0.722978, No Obj: 0.603932, .5R: 0.000000, .75R: 0.000000, count: 5, class_loss = 14218.710938, iou_loss = 11.977539, total_loss = 14230.688477 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.342020, GIOU: 0.062201), Class: 0.601812, Obj: 0.513865, No Obj: 0.496166, .5R: 0.333333, .75R: 0.000000, count: 3, class_loss = 2501.528564, iou_loss = 1.241943, total_loss = 2502.770508 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.498844, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 630.034790, iou_loss = 0.000000, total_loss = 630.034790 
+ total_bbox = 192, rewritten_bbox = 2.604167 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.154748, GIOU: -0.118852), Class: 0.498235, Obj: 0.637754, No Obj: 0.606678, .5R: 0.000000, .75R: 0.000000, count: 4, class_loss = 14386.208984, iou_loss = 27.505859, total_loss = 14413.714844 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.494012, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 2492.247314, iou_loss = 0.000000, total_loss = 2492.247314 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.498708, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 631.501099, iou_loss = 0.000000, total_loss = 631.501099 
+ total_bbox = 196, rewritten_bbox = 2.551020 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.028518, GIOU: -0.118749), Class: 0.253213, Obj: 0.699032, No Obj: 0.599121, .5R: 0.000000, .75R: 0.000000, count: 2, class_loss = 14030.742188, iou_loss = 0.358398, total_loss = 14031.100586 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.494812, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 2489.279541, iou_loss = 0.000000, total_loss = 2489.279541 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.499672, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 630.824646, iou_loss = 0.000000, total_loss = 630.824646 
+ total_bbox = 198, rewritten_bbox = 2.525253 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.230375, GIOU: 0.079794), Class: 0.465324, Obj: 0.613603, No Obj: 0.606070, .5R: 0.111111, .75R: 0.000000, count: 18, class_loss = 14352.113281, iou_loss = 39.091797, total_loss = 14391.205078 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.293941, GIOU: 0.269199), Class: 0.473084, Obj: 0.408112, No Obj: 0.494583, .5R: 0.111111, .75R: 0.000000, count: 9, class_loss = 2503.490479, iou_loss = 3.955566, total_loss = 2507.446045 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.214912, GIOU: -0.167805), Class: 0.535283, Obj: 0.271061, No Obj: 0.499220, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 633.542236, iou_loss = 0.021057, total_loss = 633.563293 
+ total_bbox = 226, rewritten_bbox = 2.212389 % 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 139 Avg (IOU: 0.260303, GIOU: 0.177968), Class: 0.509843, Obj: 0.577351, No Obj: 0.602272, .5R: 0.142857, .75R: 0.000000, count: 14, class_loss = 14154.578125, iou_loss = 64.294922, total_loss = 14218.873047 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 150 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.496389, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 2496.127441, iou_loss = 0.000000, total_loss = 2496.127441 
+v3 (iou loss, Normalizer: (iou: 0.07, cls: 1.00) Region 161 Avg (IOU: 0.000000, GIOU: 0.000000), Class: 0.000000, Obj: 0.000000, No Obj: 0.500450, .5R: 0.000000, .75R: 0.000000, count: 1, class_loss = 631.850220, iou_loss = 0.000000, total_loss = 631.850220 
+ total_bbox = 240, rewritten_bbox = 2.083333 % 
+^C

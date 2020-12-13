@@ -1,0 +1,26 @@
+{
+    "os": "Linux-4.19.112+-x86_64-with-Ubuntu-18.04-bionic",
+    "python": "3.6.9",
+    "heartbeatAt": "2020-11-17T17:24:19.873362",
+    "startedAt": "2020-11-17T17:24:16.482419",
+    "docker": null,
+    "gpu": "Tesla T4",
+    "gpu_count": 1,
+    "cpu_count": 2,
+    "cuda": "10.1.243",
+    "args": [
+        "-f",
+        "/root/.local/share/jupyter/runtime/kernel-7849ba7a-058a-4206-9857-7a775b1d8b33.json"
+    ],
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/AlexeyAB/darknet",
+        "commit": null
+    },
+    "email": null,
+    "root": "/content/gdrive/My Drive/DeepLearning/ZaloChallenge/za_traffic_2020/darknet",
+    "host": "d8ed24b39259",
+    "username": "root",
+    "executable": "/usr/bin/python3"
+}

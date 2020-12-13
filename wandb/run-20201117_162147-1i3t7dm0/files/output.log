@@ -1,0 +1,5 @@
+CUDA status Error: file: ./src/dark_cuda.c : () : line: 39 : build time: Nov 16 2020 - 11:31:08 
+
+ CUDA Error: no CUDA-capable device is detected
+CUDA Error: no CUDA-capable device is detected: Bad file descriptor
+darknet: ./src/utils.c:325: error: Assertion `0' failed.

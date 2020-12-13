@@ -1,0 +1,24 @@
+2020-11-16 17:15:05,878 INFO    MainThread:58 [wandb_setup.py:_flush():68] setting env: {}
+2020-11-16 17:15:05,879 INFO    MainThread:58 [wandb_setup.py:_flush():68] multiprocessing start_methods=fork,spawn,forkserver
+2020-11-16 17:15:05,879 INFO    MainThread:58 [wandb_setup.py:_flush():68] setting login settings: {}
+2020-11-16 17:15:05,879 INFO    MainThread:58 [wandb_setup.py:_flush():68] setting login settings: {'api_key': '3bb65ddaafdfd54f7256e1959d0c2ee35590557a'}
+2020-11-16 17:15:05,879 INFO    MainThread:58 [wandb_setup.py:_flush():68] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7f6776694978>
+2020-11-16 17:15:05,881 INFO    MainThread:58 [wandb_init.py:_log_setup():302] Logging user logs to /content/gdrive/My Drive/DeepLearning/ZaloChallenge/za_traffic_2020/darknet/wandb/run-20201116_171505-3rfmj6yr/logs/debug.log
+2020-11-16 17:15:05,881 INFO    MainThread:58 [wandb_init.py:_log_setup():303] Logging internal logs to /content/gdrive/My Drive/DeepLearning/ZaloChallenge/za_traffic_2020/darknet/wandb/run-20201116_171505-3rfmj6yr/logs/debug-internal.log
+2020-11-16 17:15:30,255 INFO    MainThread:58 [wandb_run.py:_console_start():1213] atexit reg
+2020-11-16 17:15:30,261 INFO    MainThread:58 [wandb_run.py:_redirect():1083] redirect: SettingsConsole.WRAP
+2020-11-16 17:15:30,266 INFO    MainThread:58 [wandb_run.py:_redirect():1114] Wrapping output streams.
+2020-11-16 17:15:30,266 INFO    MainThread:58 [wandb_run.py:_redirect():1130] Redirects installed.
+2020-11-16 17:15:30,268 INFO    MainThread:58 [wandb_init.py:_pause_backend():223] pausing backend
+2020-11-16 17:15:30,284 INFO    MainThread:58 [wandb_init.py:_resume_backend():228] resuming backend
+2020-11-16 17:15:35,581 INFO    MainThread:58 [wandb_init.py:_pause_backend():223] pausing backend
+2020-11-16 17:16:42,657 INFO    MainThread:58 [wandb_init.py:_resume_backend():228] resuming backend
+2020-11-16 17:16:46,848 INFO    MainThread:58 [wandb_init.py:_pause_backend():223] pausing backend
+2020-11-16 17:18:15,593 INFO    MainThread:58 [wandb_init.py:_resume_backend():228] resuming backend
+2020-11-16 17:18:15,720 INFO    MainThread:58 [wandb_init.py:_pause_backend():223] pausing backend
+2020-11-16 17:18:34,141 INFO    MainThread:58 [wandb_init.py:_resume_backend():228] resuming backend
+2020-11-16 17:18:34,266 INFO    MainThread:58 [wandb_init.py:_pause_backend():223] pausing backend
+2020-11-16 17:19:22,010 INFO    MainThread:58 [wandb_init.py:_resume_backend():228] resuming backend
+2020-11-16 17:19:22,014 INFO    MainThread:58 [wandb_init.py:_pause_backend():223] pausing backend
+2020-11-16 17:19:40,320 INFO    MainThread:58 [wandb_init.py:_resume_backend():228] resuming backend
+2020-11-16 17:19:40,442 INFO    MainThread:58 [wandb_init.py:_pause_backend():223] pausing backend
