@@ -1,10 +1,10 @@
 # YOLOv4 VIET NAM TRAFFIC SIGN DETECTION 
 
-# DATA PROCESSING
+# Data Processing
   
   init.ipynb : Read images path, clean output labels and create nescessary files before training model
 
-# TRAINING MODEL 
+# Training Model
 
  Zalo.ipynb : Train model and get results to sumission.json file. Show some predicted images. 
  
